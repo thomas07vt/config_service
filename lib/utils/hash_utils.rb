@@ -8,7 +8,14 @@ class HashUtils
       elements_with_hash_values.each do |key, value|
         result.send("#{key}=", hash_to_open_struct(value))
       end
+
+      result.extend(OpenStructHashable) if RUBY_PLATFORM == "java"
+
       result
     end
   end
+end
+
+module OpenStructHashable
+  delegate :[], to: :@table
 end

@@ -12,6 +12,12 @@ describe ConfigService do
       allow(File).to receive(:exist?).and_return(false)
       expect {ConfigService.load_config('cache_config.yml')}.to raise_error
     end
+
+    it 'allows access by the :[] method' do
+      config = ConfigService.load_config('memcached.yml')
+      expect { config[:local] }.to_not raise_error
+    end
+
   end
 
   context 'environment' do
@@ -33,4 +39,6 @@ describe ConfigService do
       expect(ConfigService.environment).to eql('dummy')
     end
   end
+
+
 end
