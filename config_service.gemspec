@@ -1,13 +1,13 @@
 Gem::Specification.new do |s|
   s.name        = 'config_service'
-  s.version     = '1.0.0'
+  s.version     = '1.0.1'
   s.summary     = "A gem to load config yml files"
   s.description = "A gem to load config yml files"
   s.authors     = ['Linh Chau']
   s.email       = 'chauhonglinh@gmail.com'
   s.files       = [
                     './config_service.gemspec', 'lib/config_service.rb',
-                    'lib/services/config_service.rb'
+                    'lib/services/config_service.rb', 'lib/utils/hash_utils.rb'
                   ]
   s.homepage    = 'https://github.com/linhchauatl/config_service'
   s.license     = 'MIT'

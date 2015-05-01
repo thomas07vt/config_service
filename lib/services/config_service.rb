@@ -16,7 +16,7 @@ class ConfigService
       
       raise("#{Time.now.strftime("%m/%d/%Y %H:%M:%S.%3N %z")} ERROR: ConfigService#load_config #{config_file_name} file not found.") unless config_file
 
-      YAML.load_file(config_file)
+      HashUtils.hash_to_open_struct(YAML.load_file(config_file))
     end
 
     def environment

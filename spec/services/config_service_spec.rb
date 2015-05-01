@@ -5,7 +5,7 @@ describe ConfigService do
     it 'loads existing config file' do
       config = ConfigService.load_config('memcached.yml')
       expect(config).not_to be_nil
-      expect(config.is_a? Hash).to eql(true)
+      expect(config.is_a? OpenStruct).to eql(true)
     end
 
     it 'raises error if the conf directory and config directory do not exist or the config file does not exist' do

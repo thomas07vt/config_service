@@ -1,4 +1,5 @@
 require 'yaml'
+require 'ostruct'
 require_relative 'services/config_service'
 
 def load_gem_lib(sub_path)
@@ -9,7 +10,7 @@ rescue Exception => error
   # Who cares?
 end
 
-['services'].each do |sub_path|
+['utils', 'services'].each do |sub_path|
   load_gem_lib(sub_path)
   rb_files =  Dir.glob("#{File.expand_path('.')}/lib/#{sub_path}/*.rb")
   rb_files.each { |rb_file| require rb_file }  

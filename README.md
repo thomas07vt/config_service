@@ -47,3 +47,27 @@ ConfigService.load_config(<YAML FILENAME>)
 
 You can also call `ConfigService.environment` to detect the current Rails environment ( based on Rails.env) or Application environment (based on ENV['RACK_ENV']).</br>
 
+### Once you load the configuration, you can use it with Hash notion or with Object notion
+
+For example:
+```ruby
+config = ConfigService.load_config('memcached.yml')
+
+#Then you can get configuration for different environment using any of these commands:
+dev_config = config['development']
+# or
+dev_config = config.development
+
+# You can get current environment based on RAILS_ENV (Rails.env) or ENV['RACK_ENV']
+current_env_config = config[ConfigService.environment]
+# or
+current_env_config = config.send(ConfigService.environment)
+
+
+# You can use any deep-nested level
+dev_host = config.development.host
+#or
+dev_host = config['developement']['host']
+
+```
+
