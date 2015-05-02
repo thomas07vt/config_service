@@ -1,5 +1,5 @@
 ### config_service
-
+[![Gem Version](https://badge.fury.io/rb/config_service.svg)](http://badge.fury.io/rb/config_service)
 
 This is [**Ruby**](https://www.ruby-lang.org/) gem that is used to load config yml files.<br/>
 It can be used in any Ruby programs, Rails or others that have YAML files in the directories APP_ROOT/conf or APP_ROOT/config.<br/>
