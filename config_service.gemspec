@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'config_service'
-  s.version     = '1.0.1'
+  s.version     = '1.0.2'
   s.summary     = "A gem to load config yml files"
   s.description = "A gem to load config yml files"
   s.authors     = ['Linh Chau']
