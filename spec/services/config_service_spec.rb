@@ -23,9 +23,9 @@ describe ConfigService do
       expect(ConfigService.environment).to eql('test')
     end
 
-    it 'returns local if the environment is not set' do
+    it 'returns development if the environment is not set' do
       ENV['RACK_ENV'] = nil
-      expect(ConfigService.environment).to eql('local')
+      expect(ConfigService.environment).to eql('development')
     end
 
     it 'returns correct value based on environment variable' do

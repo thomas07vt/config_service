@@ -22,9 +22,9 @@ class ConfigService
     def environment
       return Rails.env if defined? Rails
       return ENV['RACK_ENV'] if ENV['RACK_ENV'].present?
-      'local'
+      'development'
     rescue => error
-      'local'
+      'development'
     end
   end # class methods
 end
