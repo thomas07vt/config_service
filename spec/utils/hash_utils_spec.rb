@@ -9,7 +9,7 @@ describe HashUtils do
                       two: 'number two'
                     }
       end
-      
+
       it 'creates an OpenStruct with all the hash keys and values' do
         open_struct = HashUtils.hash_to_open_struct(@one_level_hash)
 
@@ -17,6 +17,16 @@ describe HashUtils do
           expect(open_struct.respond_to? key).to eql(true)
           expect(open_struct.send key).to eql(@one_level_hash[key])
         end
+      end
+
+      it 'allows hash-like access via string' do
+        open_struct = HashUtils.hash_to_open_struct(@one_level_hash)
+        expect(open_struct['one']).to eq('number one')
+      end
+
+      it 'allows hash-like access via symbol' do
+        open_struct = HashUtils.hash_to_open_struct(@one_level_hash)
+        expect(open_struct[:one]).to eq('number one')
       end
 
     end
@@ -29,7 +39,7 @@ describe HashUtils do
                           three: 'number three'
                         }
       end
-      
+
       it 'creates an OpenStruct with all the hash keys and values, deep down to all nested levels' do
         open_struct = HashUtils.hash_to_open_struct(@nested_hash)
 
@@ -43,10 +53,10 @@ describe HashUtils do
 
         expect(open_struct.respond_to? :three).to eql(true)
         expect(open_struct.three).to eql('number three')
-       
+
       end
-      
+
     end
-  
+
   end #'hash_to_open_struct(data_hash)'
 end
