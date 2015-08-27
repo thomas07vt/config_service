@@ -22,4 +22,8 @@ module OpenStructHashable
   def [](val)
     @table[val.to_sym]
   end
+
+  def []=(val, data)
+    @table[val.to_sym] = data
+  end
 end
