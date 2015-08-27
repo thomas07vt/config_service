@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
                     './config_service.gemspec', 'lib/config_service.rb',
                     'lib/services/config_service.rb', 'lib/utils/hash_utils.rb'
                   ]
-  s.homepage    = 'https://github.com/thomas07vt/config_service'
+  s.homepage    = 'https://github.com/thomas07vt/configger_service'
   s.license     = 'MIT'
   s.add_runtime_dependency 'logging'
   s.add_runtime_dependency 'activesupport'
