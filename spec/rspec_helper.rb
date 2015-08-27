@@ -1,7 +1,7 @@
 require 'rspec'
 require 'yaml'
 
-require_relative '../lib/config_service'
+require_relative '../lib/configger_service'
 
 ENV['RACK_ENV'] = 'test'
 

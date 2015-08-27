@@ -1,11 +1,11 @@
 require 'active_support'
 require 'active_support/core_ext'
 
-class ConfigService
+class ConfiggerService
   class << self
     def load_config(config_file_name)
       app_root = (defined? APP_ROOT)? APP_ROOT : File.expand_path('.')
-      
+
       config_file = nil
       ['conf', 'config'].each do |sub_path|
         if File.exist?("#{app_root}/#{sub_path}/#{config_file_name}")
@@ -13,7 +13,7 @@ class ConfigService
           break
         end
       end
-      
+
       raise("#{Time.now.strftime("%m/%d/%Y %H:%M:%S.%3N %z")} ERROR: ConfigService#load_config #{config_file_name} file not found.") unless config_file
 
       HashUtils.hash_to_open_struct(YAML.load_file(config_file))
@@ -28,3 +28,6 @@ class ConfigService
     end
   end # class methods
 end
+
+# Backward compatibility
+ConfigService = ConfiggerService
