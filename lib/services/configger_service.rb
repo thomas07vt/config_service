@@ -18,7 +18,7 @@ class ConfiggerService
     end
 
     def environment
-      @_env ||= ENV['RAILS_ENV'] || ENV['RACK_ENV'] || 'development'
+      ENV['RAILS_ENV'] || ENV['RACK_ENV'] || 'development'
     end
   end # class methods
 end
