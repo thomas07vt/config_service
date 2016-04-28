@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'rspec'
-gem 'logging'
-gem 'activesupport'
+# Specify your gem's dependencies in auto_mojo.gemspec
+gemspec
+

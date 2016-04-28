@@ -23,6 +23,7 @@ describe ConfigService do
   context 'environment' do
     after :each do
       ENV['RACK_ENV'] = 'test'
+      ConfigService.instance_variable_set(:@_env, nil)
     end
 
     it 'returns test by default while running test' do

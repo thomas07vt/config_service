@@ -27,3 +27,4 @@ module OpenStructHashable
     @table[val.to_sym] = data
   end
 end
+

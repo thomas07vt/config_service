@@ -1,5 +1,3 @@
-require 'active_support'
-require 'active_support/core_ext'
 
 class ConfiggerService
   class << self
@@ -20,14 +18,11 @@ class ConfiggerService
     end
 
     def environment
-      return Rails.env if defined? Rails
-      return ENV['RACK_ENV'] if ENV['RACK_ENV'].present?
-      'development'
-    rescue => error
-      'development'
+      @_env ||= ENV['RAILS_ENV'] || ENV['RACK_ENV'] || 'development'
     end
   end # class methods
 end
 
 # Backward compatibility
 ConfigService = ConfiggerService
+
